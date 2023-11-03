@@ -1,0 +1,58 @@
+openapi: "3.0.2"
+info:
+  title: Revision API
+  version: "1.0.0"
+servers:
+  - url: https://library.com
+paths:
+  /books:
+    get:
+      summary: get all books
+      description: the returned books
+      operationId: getBooks
+      parameters:
+        - in: query
+          name: BookName
+          description: filter returned
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: the
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    BookName:
+                      type: string
+    put:
+        summary: get all books
+        description: the returned books
+        operationId: getBooks
+        parameters:
+          - in: query
+            name: BookName
+            description: filter returned
+            required: false
+            schema:
+              type: string
+        responses:
+          "200":
+            description: the
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      BookName:
+                        type: string
