@@ -25,12 +25,7 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                    BookName:
-                      type: string
+                  $ref: "#/components/schemas/books"
     put:
         summary: get all books
         description: the returned books
@@ -50,9 +45,14 @@ paths:
                 schema:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                      BookName:
-                        type: string
+                    $ref: "#/components/schemas/books"
+                    
+components:
+  schemas:
+    books: 
+      type: object
+      properties:
+        id:
+          type: string
+        BookName:
+          type: string
